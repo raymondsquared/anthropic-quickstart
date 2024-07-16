@@ -6,6 +6,10 @@ install:
 start:
 	npm start
 
+.PHONY: run
+run:
+	node --loader ts-node/esm $(FILE_PATH)
+
 .PHONY: test
 test:
 	npm test

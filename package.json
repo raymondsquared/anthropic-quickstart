@@ -9,7 +9,7 @@
     "commitlint": "commitlint --edit",
     "prepare": "husky",
     "serve": "node dist/index.js",
-    "start": "node --loader ts-node/esm src/index.ts",
+    "start": "node --loader ts-node/esm ./src/index.ts",
     "test": "jest"
   },
   "author": "",
@@ -25,6 +25,7 @@
     "typescript": "^5.5.3"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.24.3"
+    "@anthropic-ai/sdk": "^0.24.3",
+    "handlebars": "^4.7.8"
   }
 }

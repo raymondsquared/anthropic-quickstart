@@ -1,24 +1,31 @@
-import Anthropic from '@anthropic-ai/sdk';
+import {
+  DEFAULT_ANTHROPIC_MODEL,
+  DEFAULT_MAX_TOKEN,
+  DEFAULT_TEMPERATURE,
+} from './utils/constants';
+import { AnthropicClientSingletonService } from './client';
 
-const ANTHROPIC_MODEL = 'claude-3-5-sonnet-20240620';
+const llmClientService = AnthropicClientSingletonService.getSingletonService();
 
-const anthropic = new Anthropic();
+const systemPrompt = 'Respond only with short poems.';
+const userPrompt = 'Why is the ocean salty?';
 
-const msg = await anthropic.messages.create({
-  model: ANTHROPIC_MODEL,
-  max_tokens: 1000,
-  temperature: 0,
-  system: 'Respond only with short poems.',
-  messages: [
+const llmClientServiceOutput = await llmClientService.post({
+  model: DEFAULT_ANTHROPIC_MODEL,
+  maxToken: DEFAULT_MAX_TOKEN,
+  temperature: DEFAULT_TEMPERATURE,
+  systemPrompt,
+  body: [
     {
       role: 'user',
       content: [
         {
           type: 'text',
-          text: 'Why is the ocean salty?',
+          template: null,
+          data: userPrompt,
         },
       ],
     },
   ],
 });
-console.log(msg);
+console.log(llmClientServiceOutput);
