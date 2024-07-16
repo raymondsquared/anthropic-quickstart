@@ -1,6 +1,10 @@
 // Be clear, direct, and detailed
-// When interacting with Claude, think of it as a brilliant but very new employee (with amnesia) who needs explicit instructions. Like any new employee, Claude does not have context on your norms, styles, guidelines, or preferred ways of working. The more precisely you explain what you want, the better Claude’s response will be.
-// See {@link https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/be-clear-and-direct#example-anonymizing-customer-feedback}
+// When interacting with Claude, think of it as a brilliant but very new employee (with amnesia) who needs explicit instructions. 
+// Like any new employee, Claude does not have context on your norms, styles, guidelines, or preferred ways of working. 
+// The more precisely you explain what you want, the better Claude’s response will be.
+// 
+// See {@link https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/be-clear-and-direct}
+
 
 import {
   DEFAULT_ANTHROPIC_MODEL,
